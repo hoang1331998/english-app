@@ -6,7 +6,7 @@ const authorize = require('../_middleware/authorize')
 const questionService = require('./question.service');
 
 // routes
-router.post('/', createQuestionSchema, createQuestion);
+router.post('/', authorize(), createQuestionSchema, createQuestion);
 router.get('/', authorize(), getAll);
 router.get('/:id', authorize(), getById);
 router.put('/:id', authorize(), updateSchema, update);

@@ -7,7 +7,7 @@ const examService = require('./exam.service');
 const questionService = require('../questions/question.service')
 
 // routes
-router.post('/', createQuestionSchema, createExam);
+router.post('/',authorize(), createQuestionSchema, createExam);
 router.get('/', authorize(), getAll);
 router.get('/:id', authorize(), getById);
 router.put('/:id', authorize(), updateSchema, update);
