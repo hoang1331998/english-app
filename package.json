@@ -22,14 +22,5 @@
     "nodemon": "^2.0.9",
     "rootpath": "^0.1.2",
     "sequelize": "^6.6.4"
-  },
-  "mysql": {
-    "hostname": "us-cdbr-east-04.cleardb.com",
-    "database": "heroku_892286a628f8823",
-    "user": "be4509f322be8e",
-    "password": "13c7dfc4"
-  },
-  "server": {
-    "port": 3306
   }
 }
