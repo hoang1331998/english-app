@@ -10,7 +10,7 @@ module.exports = {
 };
 
 async function getAll() {
-    return await db.Category.findAll();
+    return await db?.Category?.findAll();
 }
 
 async function getById(id) {
@@ -42,7 +42,7 @@ async function _delete(id) {
 // helper functions
 
 async function getCategory(id) {
-    const category = await db.Category.findByPk(id);
+    const category = await db.Category?.findByPk(id);
     if (!category) throw 'Category is not exist';
     return category;
 }

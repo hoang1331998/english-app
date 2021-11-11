@@ -11,11 +11,11 @@ module.exports = {
 };
 
 async function getAllByParams(params) {
-    return await db.Exam.findAll(params)
+    return await db.Exam?.findAll(params)
 }
 
 async function getAll() {
-    return await db.Exam.findAll();
+    return await db.Exam?.findAll();
 }
 
 async function getById(id) {
