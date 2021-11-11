@@ -21,5 +21,5 @@ app.use("/games", require("./games/games.controller"));
 app.use(errorHandler);
 
 // start server
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8888;
 app.listen(port, () => console.log("Server listening on port " + port));
