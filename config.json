@@ -6,5 +6,26 @@
     "password": "13c7dfc4",
     "database": "heroku_892286a628f8823"
   },
+  "development": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "root",
+    "password": "",
+    "database": "english-app-db"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "host": "us-cdbr-east-04.cleardb.com",
+    "port": 3306,
+    "user": "be4509f322be8e",
+    "password": "13c7dfc4",
+    "database": "heroku_892286a628f8823"
+  },
   "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
 }
