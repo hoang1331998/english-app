@@ -41,7 +41,7 @@ function getAll(req, res, next) {
       res.json({
         code: 200,
         message: "Successfully",
-        data: categories || "nodata",
+        data: categories,
       })
     )
     .catch(next);

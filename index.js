@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // api routes
-app.use("/", require("./categories/categories.controller"));
 app.use("/users", require("./users/users.controller"));
 app.use("/questions", require("./questions/question.controller"));
 app.use("/categories", require("./categories/categories.controller"));
