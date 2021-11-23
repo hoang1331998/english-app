@@ -19,13 +19,13 @@ function createQuestionSchema(req, res, next) {
         questionName: Joi.string().required(),
         questionType: Joi.number().required(),
         questionTitle: Joi.string().required(),
-        questionContent: Joi.string().required(),
+        questionContent: Joi.string(),
         questionDescription: Joi.string(),
         questionLevel: Joi.number().required(),
         questionCaregory: Joi.number(),
         questionAnswer: Joi.string().required(),
         questionPoint: Joi.number().required(),
-        questionExam: Joi.number().required(),
+        questionExam: Joi.number(),
         createdBy: Joi.number().required(),
     });
     validateRequest(req, next, schema);
