@@ -66,7 +66,7 @@ function updateSchema(req, res, next) {
         questionName: Joi.string().empty(''),
         questionType: Joi.number().empty(''),
         questionTitle: Joi.string().empty(''),
-        questionContent: Joi.string().empty(''),
+        questionContent: Joi.string(),
         questionDescription: Joi.string().empty(''),
         questionLevel: Joi.number().empty(''),
         questionCaregory: Joi.number().empty(''),
