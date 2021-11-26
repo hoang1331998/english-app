@@ -130,7 +130,7 @@ CREATE TABLE `questions` (
   `questionContent` text NOT NULL,
   `questionDescription` text NOT NULL,
   `questionLevel` int(10) NOT NULL,
-  `questionCaregory` int(10) DEFAULT NULL,
+  `questionCategory` int(10) DEFAULT NULL,
   `questionAnswer` text NOT NULL,
   `questionPoint` int(10) NOT NULL,
   `questionExam` int(10) NOT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE `questions` (
 -- Đang đổ dữ liệu cho bảng `questions`
 --
 
-INSERT INTO `questions` (`id`, `questionName`, `questionType`, `questionTitle`, `questionContent`, `questionDescription`, `questionLevel`, `questionCaregory`, `questionAnswer`, `questionPoint`, `questionExam`, `createdBy`, `createdAt`, `updatedAt`) VALUES
+INSERT INTO `questions` (`id`, `questionName`, `questionType`, `questionTitle`, `questionContent`, `questionDescription`, `questionLevel`, `questionCategory`, `questionAnswer`, `questionPoint`, `questionExam`, `createdBy`, `createdAt`, `updatedAt`) VALUES
 (1, 'quest1', 1, '\"I have never been to Russia. I think I shall go there next year.” said Bill.', 'Bill said that he had never been to Russia and he thought he would go there the next year.|Bill said that he would have never been to Russia and he thinks he would go there the next year.|Bill said that he had never been to Russia and he thinks he will go there the next year.|Bill said that he has never been to Russia and he thinks he would go there the next year.', '', 1, 1, 'Bill said that he had never been to Russia and he thought he would go there the next year.', 5, 1, 1, '0000-00-00', '0000-00-00'),
 (2, 'quest1', 1, '\"I have never been to Russia. I think I shall go there next year.” said Bill.', 'Bill said that he had never been to Russia and he thought he would go there the next year.|Bill said that he would have never been to Russia and he thinks he would go there the next year.|Bill said that he had never been to Russia and he thinks he will go there the next year.|Bill said that he has never been to Russia and he thinks he would go there the next year.', '', 1, 1, 'Bill said that he had never been to Russia and he thought he would go there the next year.', 5, 1, 1, '0000-00-00', '0000-00-00'),
 (3, 'Quest3', 1, 'The substance is very toxic. Protective clothing must be worn at all times.', ' Since the substance is very toxic, so protective clothing must be worn at all times.|So toxic is the substance that protective clothing must be worn at all times.|The substance is such toxic that protective clothing must be worn at all times.|The substance is too toxic to wear protective clothing at all times.', '', 1, 1, 'So toxic is the substance that protective clothing must be worn at all times.', 5, 1, 1, '2021-10-03', '2021-10-03'),

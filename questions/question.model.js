@@ -11,7 +11,7 @@ function model(sequelize) {
         questionContent: { type: DataTypes.STRING, allowNull: true },
         questionDescription: { type: DataTypes.STRING, allowNull: true },
         questionLevel: { type: DataTypes.NUMBER, allowNull: false },
-        questionCaregory: { type: DataTypes.NUMBER, allowNull: true },
+        questionCategory: { type: DataTypes.NUMBER, allowNull: true },
         questionAnswer: { type: DataTypes.STRING, allowNull: false },
         questionPoint: { type: DataTypes.NUMBER, allowNull: false },
         questionExam: { type: DataTypes.NUMBER, allowNull: true },
