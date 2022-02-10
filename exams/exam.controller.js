@@ -10,7 +10,11 @@ const questionService = require("../questions/question.service");
 router.post("/", authorize(), createQuestionSchema, createExam);
 router.get("/", authorize(), getAll);
 router.get("/:id", authorize(), getById);
-router.get("/getListExamByCategory/:categoryId", authorize(), getListExamByCategory);
+router.get(
+  "/getListExamByCategory/:categoryId",
+  authorize(),
+  getListExamByCategory
+);
 router.put("/:id", authorize(), updateSchema, update);
 router.delete("/:id", authorize(), _delete);
 router.post("/getQuestionsByExam", authorize(), getQuestionsByExam);
@@ -25,6 +29,7 @@ function createQuestionSchema(req, res, next) {
     userId: Joi.number().required(),
     totalTime: Joi.number().required(),
     categoryId: Joi.number().required(),
+    listQuestion: Joi.string().required(),
   });
   validateRequest(req, next, schema);
 }
