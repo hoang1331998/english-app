@@ -1,17 +1,17 @@
 {
   "database": {
-    "host": "us-cdbr-east-04.cleardb.com",
+    "host": "us-cdbr-east-05.cleardb.net",
     "port": 3306,
-    "user": "be4509f322be8e",
-    "password": "13c7dfc4",
-    "database": "heroku_892286a628f8823"
+    "user": "b6b55a17c74db8",
+    "password": "8b7698f6",
+    "database": "heroku_91b2a9e1466beee"
   },
   "development": {
     "host": "127.0.0.1",
     "port": 3306,
     "user": "root",
     "password": "",
-    "database": "english-app-db"
+    "database": "english-app-db2"
   },
   "test": {
     "username": "root",

@@ -9,7 +9,7 @@ function model(sequelize) {
     userId: { type: DataTypes.NUMBER, allowNull: false },
     totalTime: { type: DataTypes.NUMBER, allowNull: false },
     categoryId: { type: DataTypes.NUMBER, allowNull: false },
-    listQuestion: { type: DataTypes.STRING, allowNull: false },
+    listQuestion: { type: DataTypes.STRING, allowNull: true },
   };
 
   return sequelize.define("Exam", attributes);
