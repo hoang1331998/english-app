@@ -38,5 +38,7 @@ async function initialize() {
   db.Result = require("../results/result.model")(sequelize);
 
   // sync all models with database
-  await sequelize.sync();
+  
+  // await sequelize.sync();
+  //--unhandled-rejections=strict`
 }

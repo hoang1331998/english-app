@@ -30,7 +30,7 @@ function createQuestionSchema(req, res, next) {
     totalTime: Joi.number().required(),
     categoryId: Joi.number().required(),
     categoryId: Joi.number().required(),
-    listQuestion: Joi.string(),
+    listQuestion: Joi.string().required(),
   });
   validateRequest(req, next, schema);
 }
@@ -81,6 +81,7 @@ function updateSchema(req, res, next) {
     userId: Joi.number().empty(""),
     totalTime: Joi.number().empty(""),
     categoryId: Joi.number().empty(""),
+    listQuestion: Joi.string().empty(""),
   });
   validateRequest(req, next, schema);
 }

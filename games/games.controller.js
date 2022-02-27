@@ -17,6 +17,11 @@ async function getGame(req, res, next) {
   let { examId } = req.body;
 
   let exam = await examsService.getById(examId);
+  const test = await questionService.getAllByParams({
+    where: {
+      id: [1, 2, 3],
+    },
+  });
 
   await questionService
     .getAllByParams({ where: { questionExam: examId } })
