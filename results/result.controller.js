@@ -7,7 +7,7 @@ const resultService = require("./result.service");
 const userService = require("../users/user.service");
 
 // routes
-router.post("/", authorize(), createQuestionSchema, createResult);
+router.post("/", authorize(), createResultSchema, createResult);
 router.get("/", authorize(), getAll);
 router.get("/rate", authorize(), getRate);
 router.get("/:id", authorize(), getById);
@@ -16,13 +16,14 @@ router.delete("/:id", authorize(), _delete);
 
 module.exports = router;
 
-function createQuestionSchema(req, res, next) {
+function createResultSchema(req, res, next) {
   const schema = Joi.object({
     examId: Joi.number().required(),
     totalPoint: Joi.number().required(),
     userId: Joi.number().required(),
     totalTime: Joi.number().required(),
     answer: Joi.string().required(),
+    examName: Joi.string(),
   });
   validateRequest(req, next, schema);
 }
@@ -32,7 +33,7 @@ async function getRate(req, res, next) {
   resultService
     .getAll()
     .then((results) => {
-        res.json({
+      res.json({
         code: 200,
         message: "success",
         users: allUser,
@@ -55,7 +56,7 @@ function createResult(req, res, next) {
     .catch(next);
 }
 
-function getAll(req, res, next) {
+async function getAll(req, res, next) {
   resultService
     .getAll()
     .then((results) =>
@@ -88,6 +89,7 @@ function updateSchema(req, res, next) {
     userId: Joi.number().empty(""),
     totalTime: Joi.number().empty(""),
     answer: Joi.string().empty(""),
+    examName: Joi.string(),
   });
   validateRequest(req, next, schema);
 }

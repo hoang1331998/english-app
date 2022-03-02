@@ -36,9 +36,9 @@ async function initialize() {
   db.Category = require("../categories/categories.model")(sequelize);
   db.Exam = require("../exams/exam.model")(sequelize);
   db.Result = require("../results/result.model")(sequelize);
-
+  connection.release();
   // sync all models with database
-  
+
   // await sequelize.sync();
   //--unhandled-rejections=strict`
 }
