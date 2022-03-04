@@ -1,10 +1,17 @@
 {
-  "database": {
+  "database2": {
     "host": "us-cdbr-east-05.cleardb.net",
     "port": 3306,
     "user": "b6b55a17c74db8",
     "password": "8b7698f6",
     "database": "heroku_91b2a9e1466beee"
+  },
+  "database": {
+    "host": "us-cdbr-east-05.cleardb.net",
+    "port": 3306,
+    "user": "bc85c2db193e79",
+    "password": "1c54c104",
+    "database": "heroku_ef1f6b17c071fe5"
   },
   "development": {
     "host": "127.0.0.1",
@@ -12,20 +19,6 @@
     "user": "root",
     "password": "",
     "database": "english-app-db2"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "host": "us-cdbr-east-04.cleardb.com",
-    "port": 3306,
-    "user": "be4509f322be8e",
-    "password": "13c7dfc4",
-    "database": "heroku_892286a628f8823"
   },
   "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
 }
