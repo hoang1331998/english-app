@@ -9,6 +9,7 @@ const userService = require("../users/user.service");
 // routes
 router.post("/", authorize(), createResultSchema, createResult);
 router.get("/", authorize(), getAll);
+router.get("/getByUser/:id", authorize(), getByUser);
 router.get("/rate", authorize(), getRate);
 router.get("/:id", authorize(), getById);
 router.put("/:id", authorize(), updateSchema, update);
@@ -77,6 +78,19 @@ function getById(req, res, next) {
         code: 200,
         message: "get result successfully",
         data: results,
+      })
+    )
+    .catch(next);
+}
+
+async function getByUser(req, res, next) {
+  resultService
+    .getAllByParams({ where: { userId: req.params.id } })
+    .then((exams) =>
+      res.json({
+        code: 200,
+        message: "Get results successfully",
+        data: exams,
       })
     )
     .catch(next);
