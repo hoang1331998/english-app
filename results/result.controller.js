@@ -25,6 +25,8 @@ function createResultSchema(req, res, next) {
     totalTime: Joi.number().required(),
     answer: Joi.string().required(),
     examName: Joi.string(),
+    totalRecords: Joi.number(),
+    numberOfCorrect: Joi.number(),
   });
   validateRequest(req, next, schema);
 }

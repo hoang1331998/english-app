@@ -10,6 +10,8 @@ function model(sequelize) {
         answer: { type: DataTypes.STRING, allowNull: false },
         examId: { type: DataTypes.NUMBER, allowNull: false },
         examName: { type: DataTypes.STRING, allowNull: true },
+        totalRecords: { type: DataTypes.NUMBER, allowNull: true },
+        numberOfCorrect: { type: DataTypes.NUMBER, allowNull: true },
     };
 
     return sequelize.define('Result', attributes);

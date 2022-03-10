@@ -54,6 +54,7 @@ async function getGame(req, res, next) {
 async function finishGame(req, res, next) {
   const { listAnswer, totalTime, examId, userId } = req.body;
   let scores = 0;
+  let numberOfCorrectAnswer = 0;
 
   const listQuestAnswered = await questionService.getAllByParams({
     where: {
@@ -67,29 +68,18 @@ async function finishGame(req, res, next) {
       listQuestAnswered[i]?.questionAnswer.trim()
     ) {
       scores += listQuestAnswered[i]?.questionPoint;
+      numberOfCorrectAnswer++;
     }
   }
 
   const exam = await examsService.getById(examId);
 
-  // for (let i = 0; i < listAnswer.length; i++) {
-  //   try {
-  //     let questionDB = await questionService.getById(listAnswer[i].id);
-
-  //     if (
-  //       questionDB &&
-  //       questionDB.questionAnswer === listAnswer[i].questionAnswer
-  //     ) {
-  //       scores += questionDB.questionPoint;
-  //     }
-  //   } catch {
-  //     i++;
-  //   }
-  // }
   let resultBody = {
     userId: userId,
     totalPoint: scores,
     totalTime: totalTime,
+    totalRecords: JSON.parse(exam?.listQuestion)?.length || 0,
+    numberOfCorrect: numberOfCorrectAnswer,
     examId: examId,
     answer: JSON.stringify(listAnswer),
     examName: exam.examName,

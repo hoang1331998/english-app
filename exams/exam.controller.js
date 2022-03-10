@@ -29,7 +29,6 @@ function createQuestionSchema(req, res, next) {
     userId: Joi.number().required(),
     totalTime: Joi.number().required(),
     categoryId: Joi.number().required(),
-    categoryId: Joi.number().required(),
     listQuestion: Joi.string().required(),
   });
   validateRequest(req, next, schema);

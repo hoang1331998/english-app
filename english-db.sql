@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 09, 2021 lúc 04:51 PM
+-- Thời gian đã tạo: Th2 15, 2022 lúc 03:33 PM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 7.3.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `english-app-db`
+-- Cơ sở dữ liệu: `english-app-db2`
 --
 
 -- --------------------------------------------------------
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `categories` (
   `id` int(20) NOT NULL,
   `categoryName` varchar(255) NOT NULL,
-  `createdAt` date NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` date NOT NULL DEFAULT current_timestamp()
+  `createdAt` date ,
+  `updatedAt` date 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -56,8 +56,8 @@ INSERT INTO `categories` (`id`, `categoryName`, `createdAt`, `updatedAt`) VALUES
 CREATE TABLE `class` (
   `id` int(10) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `createdAt` date NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` date NOT NULL DEFAULT current_timestamp()
+  `createdAt` date ,
+  `updatedAt` date 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -73,34 +73,17 @@ CREATE TABLE `exams` (
   `userId` int(20) NOT NULL,
   `categoryId` int(10) NOT NULL,
   `totalTime` int(255) NOT NULL,
-  `createdAt` date NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` date NOT NULL DEFAULT current_timestamp()
+  `listQuestion` varchar(255) DEFAULT NULL,
+  `createdAt` date ,
+  `updatedAt` date 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `exams`
 --
 
-INSERT INTO `exams` (`id`, `examName`, `totalPoint`, `userId`, `categoryId`, `totalTime`, `createdAt`, `updatedAt`) VALUES
-(1, 'Lession 1', 100, 1, 1, 45, '2021-10-03', '2021-10-03'),
-(2, 'Lession 2', 100, 1, 1, 45, '2021-10-03', '2021-10-03'),
-(3, 'Lession 3', 100, 1, 1, 45, '2021-10-03', '2021-10-03'),
-(4, 'Lession 4', 100, 1, 1, 45, '2021-10-03', '2021-10-03'),
-(5, 'Lession 1', 100, 1, 2, 45, '2021-10-03', '2021-10-03'),
-(7, 'Lession 2', 100, 1, 2, 45, '2021-10-03', '2021-10-03'),
-(8, 'Lession 3', 100, 1, 2, 45, '2021-10-03', '2021-10-03'),
-(9, 'Lession 1', 100, 1, 3, 45, '2021-10-03', '2021-10-03'),
-(10, 'Lession 2', 100, 1, 3, 45, '2021-10-03', '2021-10-03'),
-(11, 'Lession 3', 100, 1, 3, 45, '2021-10-03', '2021-10-03'),
-(12, 'Lession 1', 100, 1, 4, 45, '2021-10-03', '2021-10-03'),
-(13, 'Lession 2', 100, 1, 4, 45, '2021-10-03', '2021-10-03'),
-(14, 'Lession 3', 100, 1, 4, 45, '2021-10-03', '2021-10-03'),
-(15, 'Lession 1', 100, 1, 5, 45, '2021-10-03', '2021-10-03'),
-(16, 'Lession 2', 100, 1, 5, 45, '2021-10-03', '2021-10-03'),
-(17, 'Lession 1', 100, 1, 6, 45, '2021-10-03', '2021-10-03'),
-(18, 'Lession 2', 100, 1, 6, 45, '2021-10-03', '2021-10-03'),
-(19, 'Lession 3', 100, 1, 6, 45, '2021-10-03', '2021-10-03'),
-(20, 'Lession 1', 100, 1, 7, 45, '2021-10-03', '2021-10-03');
+INSERT INTO `exams` (`id`, `examName`, `totalPoint`, `userId`, `categoryId`, `totalTime`, `listQuestion`, `createdAt`, `updatedAt`) VALUES
+(21, 'abc', 20, 9999, 1, 15, '[1,2,3,4]', '2022-02-10', '2022-02-10');
 
 -- --------------------------------------------------------
 
@@ -112,8 +95,8 @@ CREATE TABLE `gifcode` (
   `id` int(10) NOT NULL,
   `name` varchar(255) NOT NULL,
   `expiryDate` date NOT NULL,
-  `createdAt` date NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` date NOT NULL DEFAULT current_timestamp()
+  `createdAt` date ,
+  `updatedAt` date 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -135,8 +118,8 @@ CREATE TABLE `questions` (
   `questionPoint` int(10) NOT NULL,
   `questionExam` int(10) NOT NULL,
   `createdBy` int(10) NOT NULL,
-  `createdAt` date NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` date NOT NULL DEFAULT current_timestamp()
+  `createdAt` date ,
+  `updatedAt` date 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -176,8 +159,8 @@ INSERT INTO `questions` (`id`, `questionName`, `questionType`, `questionTitle`, 
 CREATE TABLE `rate` (
   `id` int(10) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `createdAt` date NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` date NOT NULL DEFAULT current_timestamp(),
+  `createdAt` date ,
+  `updatedAt` date ,
   `listUserId` text NOT NULL,
   `timeRate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -194,9 +177,12 @@ CREATE TABLE `results` (
   `totalPoint` int(10) NOT NULL,
   `totalTime` int(10) NOT NULL,
   `answer` text NOT NULL,
+  `totalRecords` int(10) NULL,
+  `numberOfCorrect` int(10) NULL,
   `examId` int(10) NOT NULL,
-  `createdAt` date NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` date NOT NULL DEFAULT current_timestamp()
+  `examName` varchar(255) NULL,
+  `createdAt` date ,
+  `updatedAt` date 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -227,9 +213,10 @@ CREATE TABLE `users` (
   `email` varchar(30) NOT NULL,
   `username` varchar(255) NOT NULL,
   `hash` varchar(255) NOT NULL,
+  `avatar` varchar(255) NULL,
   `role` int(10) DEFAULT NULL,
-  `createdAt` datetime NOT NULL DEFAULT current_timestamp(),
-  `updatedAt` datetime NOT NULL DEFAULT current_timestamp()
+  `createdAt` datetime ,
+  `updatedAt` datetime 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -314,7 +301,7 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT cho bảng `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `questions`
